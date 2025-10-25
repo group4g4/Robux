@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="tl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Libreng Robux?!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --accent-1:#22c55e;
+      --accent-2:#4ade80;
+      --muted:#9aa4b2;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body,html{height:100%;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;background:var(--bg);color:#e6eef6;display:flex;align-items:center;justify-content:center;padding:20px;text-align:center;}
+
+    .container{
+      background:rgba(255,255,255,0.05);
+      border-radius:20px;
+      padding:30px 20px;
+      box-shadow:0 8px 30px rgba(2,6,23,0.7);
+      max-width:420px;
+      width:100%;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      margin-bottom:20px;
+    }
+    .logo svg{
+      width:40px;height:40px;
+      filter:drop-shadow(0 6px 10px rgba(34,197,94,0.3));
+    }
+    .logo-text{
+      font-weight:900;
+      font-size:1.4rem;
+      background:linear-gradient(90deg,var(--accent-1),var(--accent-2));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    h1{font-size:2rem;margin-bottom:12px;font-weight:900;}
+    p{font-size:1rem;color:var(--muted);margin-bottom:24px;}
+
+    .gem-card{width:160px;height:160px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02));border-radius:14px;box-shadow:inset 0 2px 8px rgba(255,255,255,0.02),0 12px 30px rgba(0,0,0,0.6);}
+    .gem{width:70%;height:auto;filter:drop-shadow(0 10px 20px rgba(34,197,94,0.2));}
+
+    button{
+      background:linear-gradient(90deg,var(--accent-1),var(--accent-2));
+      border:none;
+      padding:14px 18px;
+      border-radius:12px;
+      color:white;
+      font-weight:700;
+      font-size:1rem;
+      cursor:pointer;
+      width:100%;
+      box-shadow:0 10px 20px rgba(34,197,94,0.2);
+      transition:transform .15s ease;
+    }
+    button:active{transform:scale(0.97);}
+
+    footer{margin-top:16px;font-size:0.8rem;color:var(--muted);}
+
+    .prank-screen{
+      display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;padding:20px;text-align:center;background:var(--bg);color:white;
+    }
+    .prank-screen h1{font-size:2rem;color:#ef4444;margin-bottom:10px;}
+    .prank-screen p{font-size:1.2rem;margin-bottom:20px;}
+    .prank-screen button{background:linear-gradient(90deg,#ef4444,#ff7b7b);}
+
+    @media (max-width:480px){
+      h1{font-size:1.6rem;}
+      p{font-size:0.95rem;}
+      .gem-card{width:140px;height:140px;}
+      button{font-size:0.95rem;padding:12px 14px;}
+      .logo-text{font-size:1.2rem;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="main">
+    <div class="logo">
+      <!-- Robux-style geometric R logo -->
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gradLogo" x1="0" x2="1">
+            <stop offset="0" stop-color="#4ade80" />
+            <stop offset="1" stop-color="#22c55e" />
+          </linearGradient>
+        </defs>
+        <rect x="10" y="10" width="80" height="80" rx="10" fill="url(#gradLogo)" transform="rotate(15 50 50)"/>
+        <rect x="35" y="35" width="30" height="30" rx="5" fill="#0f1724" transform="rotate(15 50 50)"/>
+      </svg>
+      <div class="logo-text">Libreng Robux</div>
+    </div>
+
+    <div class="gem-card">
+      <svg class="gem" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="robux gem">
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1">
+            <stop offset="0" stop-color="#4ade80" />
+            <stop offset="1" stop-color="#22c55e" />
+          </linearGradient>
+        </defs>
+        <g transform="translate(100,100)">
+          <path d="M0,-74 L60,-24 L38,64 L-38,64 L-60,-24 Z" fill="url(#g1)"/>
+        </g>
+      </svg>
+    </div>
+
+    <h1>Libreng Robux?!</h1>
+    <p>I-click mo lang ang button sa ibaba para makuha ang iyong FREE ROBUX ngayon!</p>
+    <button id="freeBtn">Claim Free Robux</button>
+    <footer>Don't miss out!</footer>
+  </div>
+
+  <script>
+    const main = document.getElementById('main');
+    document.getElementById('freeBtn').addEventListener('click', () => {
+      main.outerHTML = `
+        <div class='prank-screen'>
+          <h1>It's a prank 😆</h1>
+          <p>Bili ka sa'yo 😜</p>
+          <button onclick="location.reload()">Balik sa site</button>
+        </div>`;
+    });
+  </script>
+</body>
+</html>
