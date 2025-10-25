@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="tl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gusto mo Robux? Bili ka!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220cc;
+      --accent-1:#ef4444; /* Robux-like red */
+      --accent-2:#ff7b7b;
+      --glass: rgba(255,255,255,0.06);
+      --muted: #9aa4b2;
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(239,68,68,0.06), transparent),
+                  radial-gradient(1000px 500px at 90% 90%, rgba(255,123,123,0.03), transparent),
+                  var(--bg);
+      color:#e6eef6;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:36px;
+    }
+
+    .card{
+      width:min(980px, 96%);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.7);
+      display:grid;
+      grid-template-columns: 360px 1fr;
+      gap:24px;
+      align-items:center;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    /* Gem area */
+    .gem-wrap{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:18px;
+    }
+    .gem-card{
+      width:320px;
+      height:320px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:14px;
+      box-shadow: inset 0 2px 8px rgba(255,255,255,0.02), 0 12px 30px rgba(0,0,0,0.6);
+      border:1px solid rgba(255,255,255,0.025);
+      position:relative;
+      overflow:hidden;
+    }
+
+    /* Robux-like gem SVG styling */
+    .gem{
+      width:68%;
+      height:auto;
+      filter: drop-shadow(0 18px 30px rgba(239,68,68,0.12));
+      transform: rotate(-12deg);
+      transition: transform .45s cubic-bezier(.2,.9,.3,1);
+    }
+    .gem-card:hover .gem{ transform: rotate(0) scale(1.05);} 
+
+    .badge{
+      font-weight:700;
+      font-size:14px;
+      background: linear-gradient(90deg,var(--accent-1),var(--accent-2));
+      padding:6px 12px;
+      border-radius:999px;
+      color:white;
+      letter-spacing:0.2px;
+      box-shadow: 0 6px 18px rgba(239,68,68,0.14);
+    }
+
+    /* Details */
+    .details{
+      padding:14px 6px;
+    }
+    h1{
+      margin:0 0 10px 0;
+      font-size:34px;
+      line-height:1.02;
+      font-weight:900;
+      letter-spacing:-0.6px;
+    }
+    p.lead{margin:0 0 16px 0;color:var(--muted);}
+
+    .cta-row{display:flex;gap:12px;align-items:center;margin-top:12px}
+    .btn{
+      appearance:none;
+      border:0;
+      padding:12px 18px;
+      border-radius:12px;
+      font-weight:700;
+      cursor:pointer;
+      background: linear-gradient(90deg,var(--accent-1),var(--accent-2));
+      color:white;
+      box-shadow: 0 10px 30px rgba(239,68,68,0.14);
+      transform:translateY(0);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .btn:active{transform:translateY(1px);}
+
+    .btn-outline{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.06);
+      color:var(--muted);
+      padding:10px 14px;
+      border-radius:12px;
+      font-weight:600;
+    }
+
+    .small{font-size:13px;color:var(--muted)}
+
+    footer.note{margin-top:18px;color:#9aa4b2;font-size:13px}
+
+    /* responsive */
+    @media (max-width:880px){
+      .card{grid-template-columns:1fr;}
+      .gem-card{width:280px;height:280px}
+      h1{font-size:28px}
+    }
+
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <section class="gem-wrap" aria-hidden="true">
+      <div class="badge">Promo</div>
+      <div class="gem-card" title="Robux-style gem">
+        <!-- SVG gem inspired by Robux icon, original simple shape -->
+        <svg class="gem" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="robux gem">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1">
+              <stop offset="0" stop-color="#ff6b6b" />
+              <stop offset="1" stop-color="#ef4444" />
+            </linearGradient>
+            <linearGradient id="g2" x1="0" x2="1">
+              <stop offset="0" stop-color="#fff" stop-opacity="0.35" />
+              <stop offset="1" stop-color="#fff" stop-opacity="0.06" />
+            </linearGradient>
+            <filter id="f1" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="6" result="b" />
+              <feBlend in="SourceGraphic" in2="b" />
+            </filter>
+          </defs>
+
+          <!-- main diamond -->
+          <g transform="translate(100,100)">
+            <path d="M0,-74 L60,-24 L38,64 L-38,64 L-60,-24 Z" fill="url(#g1)" stroke="#7a0f0f" stroke-opacity="0.12" stroke-width="1"/>
+            <!-- highlight facets -->
+            <path d="M0,-74 L18,-24 L-38,64 L-60,-24 Z" fill="url(#g2)" opacity="0.85"/>
+            <path d="M60,-24 L38,64 L0,8 Z" fill="rgba(0,0,0,0.06)"/>
+          </g>
+        </svg>
+      </div>
+      <div class="small">Cute Robux-inspired mockup — libre to customize</div>
+    </section>
+
+    <section class="details">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <div>
+          <h1>Gusto mo Robux? <span style="color:var(--accent-1)">Bili ka</span></h1>
+          <p class="lead">Simple landing page mockup na may Robux-style na design. Pwede mo itong i-edit para gawing promo, link to store, o gift card page.</p>
+        </div>
+        <div style="text-align:right">
+          <div class="small">Available packs</div>
+          <div style="font-weight:900;font-size:20px;margin-top:6px">50 • 250 • 1000</div>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <button class="btn" id="buyBtn">Bili Ngayon</button>
+        <button class="btn-outline" id="learnBtn">Paano bumili?</button>
+      </div>
+
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+        <div style="background:var(--glass);padding:10px;border-radius:10px;min-width:120px;text-align:center;">
+          <div style="font-weight:700;font-size:16px">₱199</div>
+          <div class="small">50 Robux</div>
+        </div>
+        <div style="background:var(--glass);padding:10px;border-radius:10px;min-width:120px;text-align:center;">
+          <div style="font-weight:700;font-size:16px">₱699</div>
+          <div class="small">250 Robux</div>
+        </div>
+        <div style="background:var(--glass);padding:10px;border-radius:10px;min-width:120px;text-align:center;">
+          <div style="font-weight:700;font-size:16px">₱2,499</div>
+          <div class="small">1000 Robux</div>
+        </div>
+      </div>
+
+      <footer class="note">Disclaimer: Ito ay demo layout lamang. Hindi opisyal na Roblox site o produkto. Customise mo nalang ang links at presyo.</footer>
+    </section>
+  </main>
+
+  <script>
+    // Small interactive touches
+    document.getElementById('buyBtn').addEventListener('click', function(){
+      const old = this.innerText;
+      this.innerText = 'Sending you to checkout...';
+      setTimeout(()=>{ this.innerText = old; alert('Demo: dito mo ilalagay ang checkout link o modal.'); }, 800);
+    });
+    document.getElementById('learnBtn').addEve
